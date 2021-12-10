@@ -1,0 +1,1034 @@
+<html><head>
+<meta charset="UTF-8">
+<title>GMTogether readme</title>
+<meta name="viewport" content="width=device-width" />
+<meta name="livenode" content="#doc" />
+<meta property="theme-color" content="#FFF037" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:site_name" content="YellowAfterlife" />
+<meta property="og:title" content="GMTogether readme" />
+<meta property="og:url" content="https://yal.cc/r/19/gmt/" />
+<meta property="twitter:url" content="https://yal.cc/r/19/gmt/" />
+<meta property="og:description" content="GMTogether is a tool for playing local multiplayer GameMaker games over the internet." />
+<meta property="twitter:description" content="GMTogether is a tool for playing local multiplayer GameMaker games over the internet." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="og:image" content="https://yal.cc/r/19/gmt/og.png" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="320" />
+<meta property="twitter:image" content="https://yal.cc/r/19/gmt/og.png" />
+<meta property="twitter:image:width" content="1280" />
+<meta property="twitter:image:height" content="320" />
+<script type="text/javascript">
+if (document.location.host == "yal.cc" && location.protocol == "http:") {
+	document.location.protocol = "https:";
+}
+</script>
+<style type="text/css">
+body, #doc tt {
+	font: 15px 'Open Sans', sans-serif;
+	line-height: 1.35;
+}
+body {
+	margin: 0;
+}
+.main {
+	width: 100%;
+	min-height: 100%;
+	min-height: 100vh;
+	background-color: #899FC6;
+}
+.page {
+	max-width: 656px;
+	background: #ffffff;
+	margin: 0 auto;
+	padding: 8px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+	min-height: 100%;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+.page > p:first-child {
+	margin-top: 0;
+}
+#doc, #doc ul, #doc ol {
+	padding-left: 0;
+	margin: 0;
+}
+#doc div ul, #doc div ol {
+	padding-left: 20px;
+}
+#doc div ul li {
+	list-style: disc;
+	list-style-image: url('data:image/svg+xml;base256,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="1em" viewBox="0 0 20px 1em"><circle cx="17px" cy="0.675em" r="2px"/></svg>'); 
+}
+
+#doc .header {
+	display: block;
+	outline: none;
+	text-decoration: none;
+	margin: 0;
+	font-weight: 700;
+	font-size: 100%;
+	color: #458;
+	border-left: 2px solid #f3f3f3;/* #f9f9f9*/
+	padding-left: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	cursor: pointer;
+}
+#doc .header::before {
+	display: inline-block;
+	content: "+";
+	font: 12px monospace;
+	border: 1px solid #458;
+	line-height: 11px;
+	height: 11px;
+	width: 11px;
+	text-align: center;
+	border-radius: 50%;
+	margin-right: 4px;
+	vertical-align: middle;
+	position: relative;
+	top: -1px;
+}
+#doc .item.open > .header::before {
+	content: "-";
+}
+#doc .item.empty > .header::before {
+	content: " "; /*"·"*/
+}
+#doc .header:hover {
+	border-left-color: #f3f3f3;
+	background: #f3f3f3;
+}
+#doc .header .ret-arrow {
+	font-weight: normal;
+	margin: 0 0.1em;
+}
+
+#doc a.broken {
+	color: red;
+}
+#doc p {
+	margin: 0;
+}
+#doc p + p, #doc p.pad {
+	margin-top: 0.5em;
+}
+#doc img {
+	max-width: 100%;
+}
+#doc h3 {
+	margin: 0.25em 0;
+	font-size: 125%;
+	font-weight: normal;
+	border-bottom: 1px solid #ccc;
+}
+
+#doc .content, #doc ul {
+	padding-left: 20px;
+	border-left: 2px solid #f3f3f3;
+}
+#doc .content {
+	padding-top: 0.25em;
+	padding-bottom: 0.5em;
+}
+#doc tt {
+	font-weight: bold;
+}
+#doc pre {
+	font-family: Consolas, Dejavu Sans Mono, Segoe UI Mono, Ubuntu Mono, Lucida Console, monospace;
+	font-size: 9pt;
+	line-height: 1.25;
+	background: white;
+	padding: 4px 2px 4px 10px;
+	margin: 0;
+	tab-size: 4;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+#doc pre a {
+	text-decoration: none;
+}
+#doc pre a.uf {
+	background-color: #f7f0ff;
+}
+#doc pre a.kw {
+	background-color: #f0f7ff;
+}
+#doc pre a.sf, #doc pre a.sv {
+	background-color: #fff3f0;
+}
+#doc pre a:hover {
+	text-decoration: underline;
+}
+#doc abbr[title] {
+	text-decoration: underline;
+	text-decoration-color: #bbb;
+	text-decoration-style: double;
+}
+#doc hr {
+	margin: 0.5em 0;
+	margin-right: 1em;
+	border: 0;
+	border-top: 2px dashed #f3f3f3;
+}
+#doc .item + hr {
+	margin: 0;
+	height: 1em;
+	border: 1px solid #f3f3f3;
+	border-width: 1px 0 1px 0;
+}
+#doc .item {
+	border-top: 1px solid #f3f3f3;
+	margin-top: 0.3em;
+}
+#doc .item:first-child {
+	margin-top: 0em;
+}
+#doc .item:last-child {
+	border-bottom: 1px solid #f3f3f3;
+}
+#doc .item + .item, #doc hr + .item {
+	border-top: 0;
+	margin-top: 0;
+}
+#doc .item + p {
+	border-top: 1px solid #f3f3f3;
+	padding-top: 0.3em;
+}
+/* delay display until load */
+#doc[ready] .item:not(.open) > .content {
+	display: none;
+}
+</style>
+<style type="text/css" id="md_gml">
+/* GameMakerLanguage */
+pre.gmlmd .md { color: #7A81A9 } /* #define */
+pre.gmlmd .kw { color: #008; font-weight: bold } /* keyword */
+pre.gmlmd .co { color: #080 } /* comment */
+pre.gmlmd .nu { color: #00f } /* number */
+pre.gmlmd .nx { color: #00f } /* hex */
+pre.gmlmd .st { color: #00f } /* string */
+pre.gmlmd .ts { color: #00f } /* template string */
+pre.gmlmd .op { color: #000 } /* operator */
+pre.gmlmd .cb { color: #008; font-weight: bold } /* curly brace */
+pre.gmlmd .sv { color: #800 } /* std func */
+pre.gmlmd .sf { color: #800 } /* std var */
+pre.gmlmd .ri { color: #0078aa } /* assets */
+pre.gmlmd .uf { color: #808 } /* user func */
+pre.gmlmd .uv { color: #000 } /* user var */
+pre.gmlmd .lv { color: #648 } /* local var */
+pre.gmlmd .fd { color: #804 } /* field */
+</style>
+<style type="text/css" id="night_css">
+#night { display: none }
+label[for="night"] {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#night:checked + .main {
+	background-color: #405070;
+}
+#night:checked + .main .page {
+	background-color: #1A202D;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	color: white;
+}
+#night:checked + .main a,
+#night:checked + .main a:visited,
+#night:checked + .main #doc .header,
+#night:checked + .main label[for="night"] {
+	color: #9DEC76;
+}
+#night:checked + .main #doc .header:before,
+#night:checked + .main #doc h3 {
+	border-color: #9DEC76
+}
+#night:checked + .main #doc .header,
+#night:checked + .main #doc .header:hover,
+#night:checked + .main #doc .content,
+#night:checked + .main #doc .item,
+#night:checked + .main #doc .item + p,
+#night:checked + .main #doc hr,
+#night:checked + .main #doc ul {
+	border-color: rgba(205,225,255,0.1);
+}
+#night:checked + .main #doc .header:hover,
+#night:checked + .main #doc .asset:hover {
+	background: rgba(205,225,255,0.1);
+}
+#night:checked + .main div ul li {
+	list-style-image: url('data:image/svg+xml;base256,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="1em" viewBox="0 0 20px 1em"><circle cx="17px" cy="0.675em" r="2px" fill="white"/></svg>'); 
+}
+#night:checked + .main pre {
+	color: #cccccc;
+	background: #000000;
+	border: 1px solid #3E4757;
+}
+#night:checked + .main pre.gmlmd .op { color: #CCCCCC }
+#night:checked + .main pre.gmlmd .co { color: #5B995B }
+#night:checked + .main pre.gmlmd .kw { color: #FFB871 }
+#night:checked + .main pre.gmlmd .md { color: #FFB871 }
+#night:checked + .main pre.gmlmd .cb { color: #FFB871 }
+#night:checked + .main pre.gmlmd .sf { color: #FFB871 }
+#night:checked + .main pre.gmlmd .uf { color: #FFB871 }
+#night:checked + .main pre.gmlmd .nu { color: #FF8080 }
+#night:checked + .main pre.gmlmd .st { color: #FCF320 }
+#night:checked + .main pre.gmlmd .ts { color: #FF8080 }
+#night:checked + .main pre.gmlmd .sv { color: #FF8080 }
+#night:checked + .main pre.gmlmd .gv { color: #FF80FF }
+#night:checked + .main pre.gmlmd .ri { color: #FF8080 }
+#night:checked + .main pre.gmlmd .lv { color: #FFF899 }
+#night:checked + .main pre.gmlmd .uv { color: #B2B1FF }
+#night:checked + .main pre.gmlmd .fd { color: #B2B1FF }
+
+#night:checked + .main pre.gmlmd a.uf {
+	background-color: #431;
+}
+#night:checked + .main pre.gmlmd a.kw {
+	background-color: #431;
+}
+#night:checked + .main pre.gmlmd a.sf,
+#night:checked + .main pre.gmlmd a.sv {
+	background-color: #431;
+}
+</style>
+<style>
+.main.boxtt #doc tt {
+	display: inline-block;
+	background: #FFFBE4;
+	font-family: Consolas, Ubuntu Mono, Dejavu Sans Mono, Lucida Console, monospace;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 0 2px;
+	border: 1px solid #E6E0C4;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	max-width: 100%;
+	word-break: break-word;
+}
+#night:checked + .main.boxtt #doc tt {
+	background-color: #000;
+	border-color: #5b7c9f;
+	color: white;
+}
+</style>
+<style type="text/css" id="print_css">
+@media print {
+	.main { background-color: transparent }
+	.display-controls { display: none; }
+	.page { width: 100%; box-shadow: none; }
+	#doc .header::before,
+	#doc .item.open .header::before	{
+		content: "~";
+	}
+	#doc { display: inherit }
+	#doc .item:not(.open) > .content,
+	#doc[ready] .item:not(.open) > .content	{
+		display: inherit;
+	}
+}
+</style>
+<noscript><style>
+#doc .header::before {
+	content: "~";
+}
+#doc .header:hover {
+	border-left-color: #f3f3f3;
+	background: inherit;
+}
+#doc { display: inherit }
+#doc .item:not(.open) > .content {
+	display: inherit;
+}
+</style></noscript>
+</head><body>
+<input type="checkbox" id="night" checked/>
+<div class="main boxtt">
+<script type="text/javascript">
+(function() {
+	var night = document.getElementById("night");
+	var path = "docmd night mode";
+	var ls = window.localStorage;
+	if (ls) {
+		night.checked = ls.getItem(path) == "true";
+		night.onchange = function(_) {
+			ls.setItem(path, "" + night.checked);
+		};
+	}
+})();
+</script>
+<div class="page">
+<p>This is a FAQ + documentation for GMTogether by YellowAfterlife,
+a tool for playing local multiplayer
+<a href="https://yoyogames.com/gamemaker">GameMaker</a> games over the internet.
+
+</p><p>The tool can be downloaded from <a href="https://discord.gg/4e63T3W">the official discord server</a>
+or <a href="https://yellowafterlife.itch.io/gmtogether?password=semipublic">itch.io page</a>.
+Donations are accepted via itch.io.
+
+</p><p>An up-to-date version of this document can always be found <a href="https://yal.cc/r/19/gmt">online</a>.</p><p class="display-controls">
+Click on sections to expand/collapse them.<br>Quick display controls: <a href="#" onclick="opt_none(); return false">Categories</a>
+&middot; <a href="#" onclick="opt_list(); return false">Sections</a>
+&middot; <a href="#" onclick="opt_all(); return false">Everything</a>
+&middot; <label for="night">Toggle night mode</label><br/>
+</p><div id="doc">
+<!--<doc--><div class="item"><a class="header" id="how" href="#how" title="(permalink)">How does GMTogether work?</a><div class="content"><p>
+	In contrast to conventional
+	<abbr title="in other words, streaming your screen to other player(s)">"cloud gaming" solutions</abbr>,
+	GMT is an engine-specific implementation of P2P lockstep networking
+	- the kind of thing you see in higher-end emulators, fighting games,
+	and some of the online multiplayer mods for games
+	(including <a href="https://itch.io/c/19430/multiplayer-gamesmodscollabs">mine</a>).
+	</p><p>
+	This offers a fairer split of lag between players,
+	lower system/network requirements,
+	and fairer handling of internet connection hickups.
+	</p><p>
+	For a slightly more in-depth comparison of netcode options, see
+	<a href="https://docs.google.com/spreadsheets/d/1NSz_vnJotnoHmFFRAh1SBFwpUkjmuQ-tm504CFi0A6Y/edit#gid=0">this sheet</a>.
+	</p><p>
+	As for the technical side, <a href="https://github.com/microsoft/detours/">Microsoft Detours</a>
+	is used - if you've ever used software that augments Windows UI elements,
+	this is pretty much the same, except for GameMaker runtime -
+	so, for example, the game might poll Windows API functions for input as usual,
+	but, instead of calling the system function directly, it would instead call GMT's
+	function, which would return synchronized inputs that account for other player.
+</p></div></div><div class="item"><a class="header" id="li" href="#li" title="(permalink)">License</a><div class="content"><p>
+	To keep it short and obvious,
+	</p><p>
+	By using the software you adhere to the following rules:
+	</p><ol>
+	<li>	Do not copy, rent, lend, lease, or otherwise distribute the software.
+	</li><li>	Do not modify, reverse-engineer, decompile, disassemble or create derivative works of the software.
+	</li><li>	Do not use the software for illegal activity.
+	</li></ol><p>
+	These rules are subject of expansion/clarification.<br/>Changes are assumed to apply retroactively.<br/>An up-to-date version of license can be found at <a href="https://yal.cc/r/19/gmt/#li">https://yal.cc/r/19/gmt/#li</a>.
+</p></div></div><hr/><div class="item"><a class="header" id="Installing-GMTogether" href="#Installing-GMTogether" title="(permalink)">Installing GMTogether</a><div class="content"><div class="item"><a class="header" id="General-setup" href="#General-setup" title="(permalink)">General setup</a><div class="content"><p>
+		Unzip the files somewhere - perhaps a separate directory, for convenience.
+	</p></div></div><div class="item"><a class="header" id="Per-game-setup" href="#Per-game-setup" title="(permalink)">Per-game setup</a><div class="content"><p>
+		If the game is a single executable, but you know that it's made with GM,
+		try extracting it via 7-zip - it might be a self-extracting cabinet;
+		</p><p>
+		If you downloaded
+		(<a href="https://docs.google.com/spreadsheets/d/1s3iQCwY-ECqrYMU50Ytug_1bPBstf6aCp3sMXObqqfs/edit#gid=0">from the sheet</a>, etc.)
+		any game-specific configuration files
+		(<tt>GMT.ini</tt> / <tt>GMT-Gamepad.lua</tt> / custom cursors),
+		unzip them into the game directory.
+	</p></div></div></div></div><div class="item"><a class="header" id="using" href="#using" title="(permalink)">Using GMTogether</a><div class="content"><p>
+	Drag and drop the game executable onto <tt>GMT-Launcher.exe</tt> (normal launch)
+	or <tt>GMT-Windowed.exe</tt> (force windowed mode), like so:
+	</p>
+	<img src='data:image/png;base64,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'>
+	<p>If all is well, upon boot you will be met with a familiar-looking menu:
+	</p>
+	<img src="data:image/png;base64,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">
+	<p>Here you can do a bunch of things:
+	</p><div class="item"><a class="header" id="menu-local" href="#menu-local" title="(permalink)">Local mode</a><div class="content"><p>
+		This opens a lobby menu without actually hosting a server on a port.
+		</p><p>
+		There are several uses for this: </p><ul>
+		<li>	You can verify that GMT doesn't break the game in some way without
+			needing a second player/window.
+		</li><li>	You can use gamepad remapping feature to use the desired gamepad in games
+			that do not natively support gamepad selection.
+		</li><li>	You can use/test KB+M -&gt; gamepad <a href="#gamepad-lua">mapping scripts</a>.
+		</li></ul></div></div><div class="item"><a class="header" id="menu-host" href="#menu-host" title="(permalink)">Host</a><div class="content"><p>
+		You enter a (UDP) port, and GMT hosts a server on that port.<br/>Perhaps you've been here before, an absolute classic of P2P networking.
+		</p><p>
+		Also, don't forget to allow the game in your firewall if you have it enabled -
+		since the game didn't do networking before, Windows most likely didn't prompt
+		you to add a firewall whitelist entry for it.
+		</p><p>
+		Once connected, you can adjust delay setting (make sure it's high enough),
+		<a href="#remap">remap gamepads</a> if you need to, and start the actual game.
+	</p></div></div><div class="item"><a class="header" id="menu-join" href="#menu-join" title="(permalink)">Join</a><div class="content"><p>
+		You enter an IP and port, and we'll try to connect to it -
+		by which I mean, repeatedly ping that endpoint with "hello" packets 
+		until they respond or you cancel.
+		</p><p>
+		Once connected, <a href="#remap">remap gamepads</a> if you need to, and wait for host to start the game.
+	</p></div></div><div class="item"><a class="header" id="menu-delay" href="#menu-delay" title="(permalink)">Delay (host-only, in-lobby)</a><div class="content"><p>
+		The absolute classic option of lockstep networking,
+		delay determines input latency but also how long we
+		can wait for remote player's inputs before we have to
+		pause the game and wait for them.
+	</p></div></div><div class="item"><a class="header" id="menu-swap" href="#menu-swap" title="(permalink)">Swap Authority (host-only, in-lobby)</a><div class="content"><p>
+		This peculiarly named option is actually very simple:<br/>Let's suppose that you have a friend who cannot port forward,
+		but they do have way more stuff unlocked in-game,
+		or a large collection of downloaded content,
+		or something else of great value for your sessions.
+		</p><p>
+		This option lets you swap places with them,
+		instead making them the game host (as far as sync logic is concerned).
+		</p><p>
+		The new host can swap authority back if they need to.
+	</p></div></div><div class="item"><a class="header" id="remap" href="#remap" title="(permalink)">Gamepad remapping</a><div class="content"><p>
+		This small menu allows to rearrange gamepads as seen by the game.
+		</p><p>
+		Doing so allows you to pick non-overlapping gamepad slots (suppose both of you have
+		a gamepad in slot 1, but the game should see them as 1 and 2), as well as being able
+		to assign a <a href="#gamepad-lua">simulated gamepad</a> to one of the slots.
+		</p><p>
+		First you can view the current positioning of gamepads per slot,
+		then you pick the source slot, then you pick the destination slot,
+		and the gamepads are swapped between them.
+		</p><p>
+		Note that some games might only listen to gamepads in the first 4 slots.
+	</p></div></div></div></div><div class="item"><a class="header" id="Supported-games" href="#Supported-games" title="(permalink)">Supported games</a><div class="content"><p>
+	There are a few requirements for a game to work with GMT: </p><ul>
+	<li>	Must be made with GameMaker: Studio (&gt;= ~1.4.1773) or GameMaker Studio 2.
+	</li><li>	Must have local multiplayer<br/>(unless you want to use it as "assist mode")
+	</li><li>	Must not use excessively exotic features (see below)
+	</li></ul><p class="pad">
+	
+	For your convenience,
+	<a href="https://docs.google.com/spreadsheets/d/1s3iQCwY-ECqrYMU50Ytug_1bPBstf6aCp3sMXObqqfs/edit#gid=0">a sheet of tested games</a>
+	exists - it covers both whether the games work "out of box",
+	and how you can make them work if they don't.
+	</p><div class="item"><a class="header" id="limitations" href="#limitations" title="(permalink)">Limitations</a><div class="content"><div class="item"><a class="header" id="no-async" href="#no-async" title="(permalink)">Async functions</a><div class="content"><p>
+			HTTP requests, networking, and select Steam API calls are not warranted to yield 
+			the same results between players, and neither to execute their events at the exact
+			same frame. If a game relies on timing/results of this for gameplay-specific logic,
+			it may result in <a href="#desyncs">desyncing</a>.
+		</p></div></div><div class="item"><a class="header" id="no-workshop" href="#no-workshop" title="(permalink)">Steam workshop</a><div class="content"><p>
+			Somewhat tied to above, workshop file synchronization is a complicated topic,
+			so for simplicity's sake GMT will just have the game assume that you do not have
+			any subscribed items.
+		</p></div></div><div class="item"><a class="header" id="no-dialog" href="#no-dialog" title="(permalink)">Native dialog boxes</a><div class="content"><p>
+			At this time, dialogue functions (<tt>show_message</tt>, <tt>get_string</tt>, etc.) are not synchronized,
+			therefore will show for both players and may cause state divergence if players answer differently.
+		</p></div></div><div class="item"><a class="header" id="no-dlls" href="#no-dlls" title="(permalink)">Native extensions</a><div class="content"><p>
+			If DLL functions are used for something that affects gameplay (suppose, reading savefiles),
+			GMT has no means of warranting that the result will be the same between players.
+			Usually a good way to guard against this is to manually ensure that your save files/etc.
+			match up.
+			</p><p>
+			Use of DLLs for gameplay elements remains to be relatively uncommon in GM games,
+			however.
+		</p></div></div></div></div></div></div><div class="item"><a class="header" id="troubleshooting" href="#troubleshooting" title="(permalink)">Troubleshooting</a><div class="content"><div class="item"><a class="header" id="trouble-pre" href="#trouble-pre" title="(permalink)">Before we start</a><div class="content"><p>
+		Before you start with this section, see if someone already made a configuration
+		for the game in question via the <a href="https://docs.google.com/spreadsheets/d/1s3iQCwY-ECqrYMU50Ytug_1bPBstf6aCp3sMXObqqfs/edit?usp=sharing">supported games sheet</a>.
+	</p></div></div><div class="item"><a class="header" id="no-menu" href="#no-menu" title="(permalink)">(the menu doesn't show up)</a><div class="content"><p>
+		Possible causes: </p><ul>
+		<li>	The game is not made with GameMaker.<br/>As in, so different from GM that it doesn't even initialize in the same way.
+		</li><li>	The game is a self-extracting archive.<br/>(try extracting it via 7-zip)
+		</li><li>	The game relaunches for one or other reason.<br/>GMT will auto-detect use of Steam API and prompt for steps required to workaround this,
+			but other platform-specific launchers may require different approaches.
+		</li><li>	You have some software (perhaps an overzealous antivirus?)
+			that disables DLL injection or other key components of Detours library.
+		</li></ul></div></div><div class="item"><a class="header" id="no-functions" href="#no-functions" title="(permalink)">"Failed to find the functions"</a><div class="content"><p>
+		Possible causes: </p><ul>
+		<li>	The game isn't actually made in GameMaker at all
+		</li><li>	The game is made in a <em>much</em> older version of GameMaker<br/>(to the point that it doesn't look like a GM game to GMT)
+		</li></ul></div></div><div class="item"><a class="header" id="too-old" href="#too-old" title="(permalink)">"The game is too old"</a><div class="content"><p>
+		This means that the game <em>is</em> made with GameMaker: Studio, but an old enough version
+		that GMT is unable to use the normal approach to processing functions.
+		</p><p>
+		If the game is spotting a <tt>data.win</tt> file in its directory, you can try copying an executable
+		from a slightly newer game to its directory and running that instead.
+		</p><p>
+		You can also try asking the game's author to try compiling the game in a slightly newer
+		version of GameMaker: Studio if they have time.
+	</p></div></div><div class="item"><a class="header" id="cant-connect" href="#cant-connect" title="(permalink)">Stuck on "Connecting..." screen</a><div class="content"><p>
+		If GMT takes more than 10 or so seconds to connect,
+		that most likely means that there's a problem with establishing the connection.
+		</p><p>
+		There can be a few reasons to this: </p><ul>
+		<li>	You got the IP address and/or the port wrong<br/>(ask the host to verify)<br/>(if the IP is 192.168.x.x, that's a local network IP, you need an external one)
+		</li><li>	The host didn't successfully port forward (or at all).<br/>Using a VPN service like Logmein Hamachi/Radmin VPN/etc. can save you from doing this
+			- but remember to use the generated VPN IP address!
+		</li><li>	The game is blocked in host's firewall<br/>(either Windows Firewall or by antivirus that offers such features)
+		</li></ul><p class="pad">
+		
+		If nothing else works out and either of you has spare $3,
+		the <a href="https://yellowafterlife.itch.io/gmtogether?password=semipublic">experimental Steam-based version</a>
+		can help by using Valve's network infrastructure to save you from dealing with
+		IPs/ports/firewalls as such.
+	</p></div></div></div></div><div class="item"><a class="header" id="desyncs" href="#desyncs" title="(permalink)">Troubleshooting desyncs</a><div class="content"><div class="item"><a class="header" id="desync-pre" href="#desync-pre" title="(permalink)">Before we start</a><div class="content"><p>
+		Same as with Troubleshooting section,
+		it is possible that someone already figured out the issue and contributed
+		a configuration file that fixes the issue(s) - see
+		<a href="https://docs.google.com/spreadsheets/d/1s3iQCwY-ECqrYMU50Ytug_1bPBstf6aCp3sMXObqqfs/edit?usp=sharing">supported games sheet</a>.
+	</p></div></div><div class="item"><a class="header" id="desync-intro" href="#desync-intro" title="(permalink)">Intro</a><div class="content"><p>
+		As with any tool that might seem to be working through means of pure magic,
+		there's ought to be some sort of a catch - and I don't mean selling your soul or anything.
+		</p><p>
+		In case of GMT, some games might desynchronize. A desync is a game state divergence to the
+		point where you aren't really playing the game together anymore, rather sending inputs
+		to a remote player in an unlike situation.
+		</p><p>
+		GMT will auto-detect desyncs based on a set of common metrics (number of active game objects,
+		RNG state, active game level, etc.) and notify both of you of the fact.
+		</p><p>
+		GMT will also save a screenshot and a summary of game state for each of the players,
+		which can then be combined for inspection (either by eye in case of screenshots, or
+		via "text diff" tools for states) to figure out what might've went wrong.
+	</p></div></div><div class="item"><a class="header" id="desync-res" href="#desync-res" title="(permalink)">Game resolution and mouse position</a><div class="content"><p>
+		This is perhaps the biggest curse of GMT: GameMaker games do a reasonable thing and store
+		mouse cursor coordinates as a fraction-less number relative to window's top-left corner.
+		</p><p>
+		As result, if your windows are of different sizes
+		(or, if you are running in fullscreen, your screens are),
+		mouse position will not match up between players.
+		</p><p>
+		This being a common issue, GMT supports a number of workarounds:</p><ul>
+		<li>	If one player's screen is larger than the other's,
+			GMT will attempt to fix this automatically by adjusting reported window size and offset
+			(thus acting as if the smaller screen is centered in the middle of the larger screen).<br/>This should take care of oddities in most games.
+		</li><li>	Many games support running in windowed mode and adjusting window size,
+			so you can try that first.
+		</li><li>	<tt>GMT-Windowed.bat</tt> will run the game in a window and prevent it from going full-screen
+			through common means.
+		</li><li>	Adjusting <tt>window_set_size</tt> in <tt>tweaks</tt> section of <a href="#GMTini">GMT.ini</a>
+			allows to override game window size and prevent the game from changing it normally.
+		</li><li>	Adjusting <tt>display_get_size</tt> in <tt>tweaks</tt> section of <a href="#GMTini">GMT.ini</a>
+			allows to override screen resolution reported to the game.
+		</li></ul></div></div><div class="item"><a class="header" id="desync-user-save-files" href="#desync-user-save-files" title="(permalink)">Per-Steam-user-ID save files</a><div class="content"><p>
+		Some games use Steam User IDs for determining save directory name, which you can usually
+		tell by navigating there and checking if there's a long-number-name directory
+		(e.g. <tt>76561198025072099</tt>).
+		</p><p>
+		To force the game to report the same Steam ID for both players, you can use
+		<tt>steam_get_user_steam_id</tt> in <tt>tweaks</tt> section of <a href="#GMTini">GMT.ini</a>.
+	</p></div></div></div></div><div class="item"><a class="header" id="faq" href="#faq" title="(permalink)">General FAQ</a><div class="content"><div class="item"><a class="header" id="non-win32" href="#non-win32" title="(permalink)">Can you support Mac/Linux?</a><div class="content"><p>
+		In theory yes, but in practice this requires a complete rewrite for both of them.
+		</p><p>
+		This is due to runtime differences, OS differences, CPU instruction differences,
+		and differences in how hooking/instrumentation is done per-OS.
+		</p><p>
+		In other words, unless we suddenly invent infinite time or something,
+		you might have to use WINE/Crossover/Proton to play the win32 versions of the games.
+	</p></div></div><div class="item"><a class="header" id="non-gm" href="#non-gm" title="(permalink)">Can you support non-GameMaker games?</a><div class="content"><p>
+		While some of the work I've done for GMT is non-GameMaker-specific, supporting
+		arbitrary games is an impressive task to undertake, as pretty much any goal
+		can be achieved in multiple ways, and there is no warranty of any given game using
+		any given approach for doing so.
+		</p><p>
+		Maintaining such a tool is likely also a full-time job, so, yeah.
+	</p></div></div><div class="item"><a class="header" id="non-2p" href="#non-2p" title="(permalink)">Can you support &gt;2 computers?</a><div class="content"><p>
+		While you may have any number of players per computer,
+		GMT only supports having 2 computers in a game session.
+		</p><p>
+		The decision was made to keep the tool's (already strange-looking) netcode bearable
+		to work with - things are so much easier when you just have to make sure that
+		the other player is good to go rather than making sure that <em>all</em> players are good
+		to go, and also making sure that if someone drops out, everyone are up to date
+		with they were doing, and also account for possibility of <em>some</em> players losing
+		connections to each other, and...
+		</p><p>
+		So, yeah, complexity. Maybe someday.
+	</p></div></div><div class="item"><a class="header" id="all-mods" href="#all-mods" title="(permalink)">Can you make a universal mod system?</a><div class="content"><p>
+		In theory yes, but it would be less cool (or far more costly) than you think.
+		</p><p>
+		So, as is evident from the Lua API for gamepads, having Lua code that interacts with
+		GML instances is a possibility, albeit with noticeable development costs
+		in terms of making GML functions available to Lua and not easily crashing the game.
+		</p><p>
+		However, "simply" being able to change variables and call functions isn't nearly enough
+		- to be able to actually introduce new content to the game you most often need to be
+		able to add new objects, scripts, or even segments to existing scripts
+		(for example, Nuclear Throne handles all weapon firing code in one massive script
+		with a 125-case switch-block).
+		</p><p>
+		Doing so in a way that works with both VM and YYC games and a wide variety of GameMaker
+		versions (which had fairly drastic internal structure changes in past) is a task
+		of great complexity and development/maintenance cost.
+		</p><p>
+		There are also ethical considerations with it suddenly being possible to inject arbitrary
+		code into arbitrary games, especially for games with online interactions, leaderboards,
+		or active speedrunning communities.
+	</p></div></div><div class="item"><a class="header" id="free" href="#free" title="(permalink)">How is this free?</a><div class="content"><p>
+		Great question!
+		</p><p>
+		Firstly, it is nice to release things for free when you can -
+		moreso when they can change how people can play (some of the) games as such.
+		</p><p>
+		But also it is impossible to warrant that the tool would work for every single game,
+		and it would surely be a shame to buy a tool only to find that it doesn't work for
+		what you were going to use it for. And other option?
+		Having to write fancy DRM for a trial?
+		Surely is own kind of fun, but also I have better things to do.
+	</p></div></div><div class="item"><a class="header" id="help" href="#help" title="(permalink)">I'd like to help but I have no money</a><div class="content"><ul>
+		<li>	Tell your friends!<br/>(it helps more than you might think)<br/>(if you have no friends, tell people that you talk to often?)
+		</li><li>	Test some games!<br/>(helps iron out bugs/figure out tweaks for oddities)
+		</li><li>	Contribute configuration files for games!<br/>(if you are tech-savvy enough to do so)
+		</li><li>	Stream/record videos of playing games via the tool!<br/>(if that's your thing)
+		</li></ul></div></div></div></div><div class="item"><a class="header" id="dev-faq" href="#dev-faq" title="(permalink)">Developer FAQ</a><div class="content"><div class="item"><a class="header" id="dev-help" href="#dev-help" title="(permalink)">My game doesn't work correctly with GMT, can you help?</a><div class="content"><p>
+		I may be available for consultation or hire for debugging issues;
+		</p><p>
+		See <a href="#limitations">limitations</a> for things that are known to not work.
+		</p><p>
+		Given a budget, previously unsupported features can be covered instead of tweaking the game (to not use them).
+		</p><p>
+		Overall, you can <a href="https://yal.cc/about/">get in touch</a>.
+	</p></div></div><div class="item"><a class="header" id="dev-online" href="#dev-online" title="(permalink)">Does this mean that I don't have to do online multiplayer now?</a><div class="content"><p>
+		Yes and no, but mostly no.
+		</p><p>
+		For players, it means that your game not having online multiplayer isn't the end of the
+		world anymore (as in, people can still play it alright if they want),
+		but you'd still want an actual integration for it to be a selling point.
+		</p><p>
+		Or, at least, to the next point,
+	</p></div></div><div class="item"><a class="header" id="dev-use" href="#dev-use" title="(permalink)">Can I use GMT in my game?</a><div class="content"><p>
+		If you are content with how GMT works and would love that as an official option
+		in your game, you can <a href="https://yal.cc/about/">get in touch</a> about licensing -
+		custom features/UI are possible, along with actually having it built-in rather than
+		as a piece of external software.
+		</p><p>
+		In general, GMT working well enough for a game is a sign that deterministic
+		netcode is an option, which is also something that you can hire me for
+		(or someone else, for that matter). Or just picking what is the best option if you can
+		tell that there's community interest in this.
+		</p><p>
+		Otherwise you can make an announcement/prominently feature it as a well-working option
+		to play your game online.
+	</p></div></div></div></div><div class="item empty"><a class="header" id="replays" href="#replays" title="(permalink)">Replays</a><div class="content"><div class="item"><a class="header" id="tas" href="#tas" title="(permalink)">TAS tools</a></div></div></div><div class="item"><a class="header" id="adv" href="#adv" title="(permalink)">Advanced topics</a><div class="content"><div class="item"><a class="header" id="GMTini" href="#GMTini" title="(permalink)">Game-specific configuration files</a><div class="content"><p>
+		GMT allows to write game-specific configuration files.
+		</p><p>
+		These offer a wide variety of tweaks to get the games running correctly,
+		a few features to reduce perceived latency (such as native cursors),
+		a few "quality of life" features (such as mouselock),
+		and some miscellaneous options.
+		</p><p>
+		The included <tt>GMT-Example.ini</tt> has examples of all supported options alongside
+		with explanations of their functions. To make use of it, copy it to the game directory,
+		rename it from <tt>GMT-Example</tt> to <tt>GMT</tt>, and edit it to your liking.
+		</p><p>
+		Options are loaded on game startup.<br/>Game-affecting options will automatically apply to both players,
+		so only the host player will usually need to edit the file.
+	</p></div></div><div class="item"><a class="header" id="gamepad-lua" href="#gamepad-lua" title="(permalink)">Virtual gamepads</a><div class="content"><div class="item"><a class="header" id="gp-premise" href="#gp-premise" title="(permalink)">Premise</a><div class="content"><p>
+			Some games are best played with keyboard &amp; mouse.<br/>But - what if both of you would prefer to use KB+M?<br/>While this is <a href="https://yellowafterlife.itch.io/gamemaker-raw-input">a solved problem</a>,
+			the amount of games that actually support using multiple mice and keyboards is fairly low...
+			to say the least.
+			</p><p>
+			If you create a file called <tt>GMT-Gamepad.lua</tt>,
+			GMT will load it up and offer it as a virtual gamepad option on <a href="#remap">remap menu</a>
+			menu and your virtual gamepad script will be able to define which keyboard/mouse/gamepad
+			controls will correspond to which virtual gamepad controls.
+			</p><p>
+			Note: if you are the game's developer, you can also use the
+			<a href="#per-player-input">player-specific input API</a> instead.
+			</p><p>
+			You can use a very minimalist subset of GM-specific functions here.
+		</p></div></div><div class="item"><a class="header" id="gp-keyboard" href="#gp-keyboard" title="(permalink)">Keyboard functions</a><div class="content"><ul>
+			<li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/keyboard%20input/keyboard_check.html">keyboard_check(key)</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/keyboard%20input/keyboard_check_pressed.html">keyboard_check_pressed(key)</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/keyboard%20input/keyboard_check_released.html">keyboard_check_released(key)</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/keyboard%20input/index.html">vk_ constants</a>
+			</li></ul><p>
+			Custom:
+			</p><div class="item"><a class="header" id="keyboard_ignore" href="#keyboard_ignore" title="(permalink)">keyboard_ignore(key, ignore = true)</a><div class="content"><p>
+				Ignores (or un-ignores) a key.
+				This prevents it from being applied to the game,
+				which is good if the remote player would like to use this same button
+				for keyboard+mouse controls.
+				Use <tt>vk_anykey</tt> to apply to all keys at once.
+			</p></div></div></div></div><div class="item"><a class="header" id="gp-mouse" href="#gp-mouse" title="(permalink)">Mouse functions</a><div class="content"><ul>
+			<li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/mouse%20input/mouse_check_button.html">mouse_check_button(bt)</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/mouse%20input/mouse_check_button_pressed.html">mouse_check_button_pressed(bt)</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/mouse%20input/mouse_check_button_released.html">mouse_check_button_released(bt)</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/mouse%20input/mouse_wheel_up.html">mouse_wheel_up()</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/mouse%20input/mouse_wheel_down.html">mouse_wheel_down()</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/mouse%20input/mouse_x.html">mouse_get_x()</a><br/>(note: a function instead of variable not to use a global <tt>__index</tt> in Lua)
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/mouse%20input/mouse_y.html">mouse_get_y()</a> (ditto)
+			</li><li>	<a href="http://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/cameras%20and%20display/display/the%20game%20window/window_mouse_get_x.html">window_mouse_get_x()</a>
+			</li><li>	<a href="http://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/cameras%20and%20display/display/the%20game%20window/window_mouse_get_y.html">window_mouse_get_y()</a>
+			</li><li>	<tt>mb_</tt> constants.
+			</li></ul><p>
+			Custom:
+			</p><div class="item"><a class="header" id="mouse_ignore_button" href="#mouse_ignore_button" title="(permalink)">mouse_ignore_button(button, ignore = true)</a><div class="content"><p>
+				Ignores (or un-ignores) a mouse button, akin to <tt>keyboard_ignore</tt>.<br/>Use <tt>mb_any</tt> to apply to all buttons at once.
+			</p></div></div><div class="item"><a class="header" id="mouse_ignore_wheel" href="#mouse_ignore_wheel" title="(permalink)">mouse_ignore_wheel(ignore = true)</a><div class="content"><p>
+				Ignores (or un-ignores) mouse wheel events.
+			</p></div></div><div class="item"><a class="header" id="mouse_ignore_move" href="#mouse_ignore_move" title="(permalink)">mouse_ignore_move(ignore = true)</a><div class="content"><p>
+				Ignores (or un-ignores) mouse movements.
+			</p></div></div></div></div><div class="item"><a class="header" id="gp-gamepad" href="#gp-gamepad" title="(permalink)">Gamepad functions</a><div class="content"><ul>
+			<li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/gamepad%20input/gamepad_button_check.html">gamepad_button_check(index, button)</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/gamepad%20input/gamepad_axis_value.html">gamepad_axis_value(index, axis)</a>
+			</li><li>	<a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/gamepad%20input/gamepad_is_connected.html">gamepad_is_connected(index)</a>
+			</li></ul><p>
+			Custom:
+			</p><div class="item"><a class="header" id="gamepad_virtual" href="#gamepad_virtual" title="(permalink)">gamepad_virtual</a><div class="content"><p>
+				A global variable storing the index (0..11) of gamepad that was mapped to
+				your gamepad script. You'll usually want to set outputs for this gamepad, although
+				you may also output to several gamepads if you need to.
+			</p></div></div><div class="item"><a class="header" id="gamepad_set_connected" href="#gamepad_set_connected" title="(permalink)">gamepad_set_connected(index, is_connected)</a><div class="content"><p>
+				Changes whether the gamepad is connected.<br/>This is fine to call every frame - the game will only receive async events
+				upon status change.
+			</p></div></div><div class="item"><a class="header" id="gamepad_button_set" href="#gamepad_button_set" title="(permalink)">gamepad_button_set(index, button, value)</a><div class="content"><p>
+				Changes status of a given button.<br/><tt>value</tt> can be true, false, 1, or 0.<br/><tt>button</tt> should be one of <tt>gp_</tt> <a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/controls/gamepad%20input/index.html">constants</a>.<br/>Pressed/released states will be generated automatically from this.
+			</p></div></div><div class="item"><a class="header" id="gamepad_axis_set" href="#gamepad_axis_set" title="(permalink)">gamepad_axis_set(index, axis, value)</a><div class="content"><p>
+				Similar to above, but for gamepad axes.<br/><tt>value</tt> should be a number in -1..+1 range.</p></div></div></div></div><div class="item"><a class="header" id="gp-inst" href="#gp-inst" title="(permalink)">Instance functions</a><div class="content"><div class="item"><a class="header" id="gp-field" href="#gp-field" title="(permalink)">&lt;number&gt;.field</a><div class="content"><p>
+				GMT runtime comes with a small metatable trick so that field access
+				on numeric GML instance IDs maps to <a href="https://docs2.yoyogames.com/source/_build/3_scripting/3_gml_overview/variable_functions/variable_instance_get.html">variable_instance_get</a>.
+				</p><p>
+				The runtime will also auto-expose object names.
+				</p><p>
+				To find out object and variable names, you can enable <tt>dumpKey</tt> in <tt>tweaks</tt> section
+				of <tt>GMT.ini</tt> (see <tt>GMT-Example.ini</tt>) and press that at points of interest to save
+				a <tt>dump.gml</tt> file into the game's save directory.
+			</p></div></div><div class="item"><a class="header" id="with" href="#with" title="(permalink)">with(object)</a><div class="content"><p>
+				Lua obviously doesn't have a with-loop,
+				but you might need to loop over instances to figure out which player instance is yours.
+				</p><p>
+				So you get this function, which returns an iterator for instance IDs.
+				</p><pre class="gmlmd">
+<span class="kw">local</span> <span class="sv">dx</span> <span class="op">=</span> <span class="nu">0</span>
+<span class="kw">local</span> <span class="sv">dy</span> <span class="op">=</span> <span class="nu">0</span>
+<span class="kw">for</span> <span class="uv">p</span> <span class="kw">in</span> <span class="kw">with</span><span class="op">(</span><span class="ri">obj_player</span><span class="op">)</span> <span class="kw">do</span>
+	<span class="kw">if</span> <span class="op">(</span><span class="uv">p</span><span class="op">.</span><span class="fd">index</span> <span class="op">==</span> <span class="nu">0</span><span class="op">)</span> <span class="kw">then</span>
+		<span class="sv">dx</span> <span class="op">=</span> <span class="sf">mouse_get_x</span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="uv">p</span><span class="op">.</span><span class="fd">x</span>
+		<span class="sv">dy</span> <span class="op">=</span> <span class="sf">mouse_get_y</span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="uv">p</span><span class="op">.</span><span class="fd">y</span>
+		<span class="kw">break</span>
+	<span class="kw">end</span>
+<span class="kw">end</span>
+<span class="co">-- normalize the offset into a length-1 vector:</span>
+<span class="kw">local</span> <span class="uv">dl</span> <span class="op">=</span> <span class="sv">math</span><span class="op">.</span><span class="sf">sqrt</span><span class="op">(</span><span class="sv">dx</span> <span class="op">*</span> <span class="sv">dx</span> <span class="op">+</span> <span class="sv">dy</span> <span class="op">*</span> <span class="sv">dy</span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="uv">dl</span> <span class="op">~</span><span class="op">=</span> <span class="nu">0</span><span class="op">)</span> <span class="kw">then</span>
+	<span class="sv">dx</span> <span class="op">=</span> <span class="sv">dx</span> <span class="op">/</span> <span class="uv">dl</span>
+	<span class="sv">dy</span> <span class="op">=</span> <span class="sv">dy</span> <span class="op">/</span> <span class="uv">dl</span>
+<span class="kw">end</span>
+<a class="sf" href="#gamepad_axis_set">gamepad_axis_set</a><span class="op">(</span><span class="uv">i</span><span class="op">,</span> <span class="sv">gp_axisrh</span><span class="op">,</span> <span class="sv">dx</span><span class="op">)</span>
+<a class="sf" href="#gamepad_axis_set">gamepad_axis_set</a><span class="op">(</span><span class="uv">i</span><span class="op">,</span> <span class="sv">gp_axisrv</span><span class="op">,</span> <span class="sv">dy</span><span class="op">)</span>
+</pre></div></div></div></div><div class="item"><a class="header" id="gp-window" href="#gp-window" title="(permalink)">Window functions</a><div class="content"><ul>
+			<li>	<a href="http://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/cameras%20and%20display/display/the%20game%20window/window_get_width.html">window_get_width()</a>
+			</li><li>	<a href="http://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/cameras%20and%20display/display/the%20game%20window/window_get_height.html">window_get_height()</a>
+			</li></ul><div class="item"><a class="header" id="window_set_cursor" href="#window_set_cursor" title="(permalink)">window_set_cursor(cursor)</a><div class="content"><p>
+				Unlike the <a href="http://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/cameras%20and%20display/display/the%20game%20window/window_set_cursor.html">built-in function</a>,
+				it can be also called with a custom cursor path as a string.
+				</p><p>
+				Note that the later does not have any caching, so maybe don't call it every frame.
+			</p></div></div></div></div><div class="item"><a class="header" id="gp-misc" href="#gp-misc" title="(permalink)">Misc functions</a><div class="content"><div class="item"><a class="header" id="print" href="#print" title="(permalink)">print(...)</a><div class="content"><p>
+				For lack of <tt>stdout</tt> in GM games, Lua's <tt>print</tt> function will instead print to the log file.
+			</p></div></div><div class="item"><a class="header" id="trace" href="#trace" title="(permalink)">trace(...)</a><div class="content"><p>
+				Akin to <tt>print</tt>, but will instead show text in top-left corner of the game for one frame.
+			</p></div></div></div></div><div class="item"><a class="header" id="gp-cb" href="#gp-cb" title="(permalink)">Callbacks</a><div class="content"><div class="item"><a class="header" id="gp-entry" href="#gp-entry" title="(permalink)">(entrypoint)</a><div class="content"><p>
+				Your Lua script is first loaded up on game start -
+				after the menu is shown and before any action begins.
+			</p></div></div><div class="item"><a class="header" id="gp-update" href="#gp-update" title="(permalink)">update()</a><div class="content"><p>
+				This function is called once per frame and is where you do what you must.
+			</p></div></div></div></div><p>
+		Example:
+		</p><pre class="gmlmd">
+<a class="sf" href="#keyboard_ignore">keyboard_ignore</a><span class="op">(</span><span class="sv">vk_anykey</span><span class="op">)</span>
+<a class="sf" href="#mouse_ignore_button">mouse_ignore_button</a><span class="op">(</span><span class="sv">mb_any</span><span class="op">)</span>
+<a class="sf" href="#mouse_ignore_move">mouse_ignore_move</a><span class="op">(</span><span class="op">)</span>
+<span class="kw">function</span> <span class="uf">update</span><span class="op">(</span><span class="op">)</span>
+	<span class="kw">local</span> <span class="uv">i</span> <span class="op">=</span> <a class="sv" href="#gamepad_virtual">gamepad_virtual</a>
+	<a class="sf" href="#gamepad_set_connected">gamepad_set_connected</a><span class="op">(</span><span class="uv">i</span><span class="op">,</span> <span class="sv">true</span><span class="op">)</span>
+	<span class="co">--</span>
+	<span class="kw">local</span> <span class="uv">lx</span><span class="op">,</span> <span class="uv">ly</span> <span class="op">=</span> <span class="nu">0</span><span class="op">,</span> <span class="nu">0</span>
+	<span class="kw">if</span> <span class="op">(</span><span class="sf">keyboard_check</span><span class="op">(</span><span class="sv">string</span><span class="op">.</span><span class="sf">byte</span><span class="op">(</span><span class="st">"D"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="kw">then</span> <span class="uv">lx</span> <span class="op">=</span> <span class="uv">lx</span> <span class="op">+</span> <span class="nu">1</span> <span class="kw">end</span>
+	<span class="kw">if</span> <span class="op">(</span><span class="sf">keyboard_check</span><span class="op">(</span><span class="sv">string</span><span class="op">.</span><span class="sf">byte</span><span class="op">(</span><span class="st">"A"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="kw">then</span> <span class="uv">lx</span> <span class="op">=</span> <span class="uv">lx</span> <span class="op">-</span> <span class="nu">1</span> <span class="kw">end</span>
+	<span class="kw">if</span> <span class="op">(</span><span class="sf">keyboard_check</span><span class="op">(</span><span class="sv">string</span><span class="op">.</span><span class="sf">byte</span><span class="op">(</span><span class="st">"S"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="kw">then</span> <span class="uv">ly</span> <span class="op">=</span> <span class="uv">ly</span> <span class="op">+</span> <span class="nu">1</span> <span class="kw">end</span>
+	<span class="kw">if</span> <span class="op">(</span><span class="sf">keyboard_check</span><span class="op">(</span><span class="sv">string</span><span class="op">.</span><span class="sf">byte</span><span class="op">(</span><span class="st">"W"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="kw">then</span> <span class="uv">ly</span> <span class="op">=</span> <span class="uv">ly</span> <span class="op">-</span> <span class="nu">1</span> <span class="kw">end</span>
+	<a class="sf" href="#gamepad_axis_set">gamepad_axis_set</a><span class="op">(</span><span class="uv">i</span><span class="op">,</span> <span class="sv">gp_axislh</span><span class="op">,</span> <span class="uv">lx</span><span class="op">)</span>
+	<a class="sf" href="#gamepad_axis_set">gamepad_axis_set</a><span class="op">(</span><span class="uv">i</span><span class="op">,</span> <span class="sv">gp_axislv</span><span class="op">,</span> <span class="uv">ly</span><span class="op">)</span>
+	<span class="co">--</span>
+	<a class="sf" href="#gamepad_button_set">gamepad_button_set</a><span class="op">(</span><span class="uv">i</span><span class="op">,</span> <span class="sv">gp_start</span><span class="op">,</span> <span class="sf">keyboard_check</span><span class="op">(</span><span class="sv">vk_enter</span><span class="op">)</span><span class="op">)</span>
+	<a class="sf" href="#gamepad_button_set">gamepad_button_set</a><span class="op">(</span><span class="uv">i</span><span class="op">,</span> <span class="sv">gp_face1</span><span class="op">,</span> <span class="sf">keyboard_check</span><span class="op">(</span><span class="sv">vk_space</span><span class="op">)</span><span class="op">)</span>
+<span class="kw">end</span>
+</pre></div></div><div class="item"><a class="header" id="interop" href="#interop" title="(permalink)">Interfacing with GMT in your GML code</a><div class="content"><div class="item"><a class="header" id="os_get_info" href="#os_get_info" title="(permalink)">os_get_info()</a><div class="content"><p>
+			GMT adds a few additional fields to os_get_info, </p><ul>
+			<li>	<tt>gmt:is_server</tt>: Whether you are the server (1) or guest (0).<br/>When testing locally, this is also 1.
+			</li><li>	<tt>gmt:net_count</tt>: The number of computers in the session.<br/>Currently this is going to be 1 or 2.
+			</li><li>	<tt>gmt:net_index</tt>: The index of the local player.<br/>This has 0...net_count-1 range.
+			</li><li>	<tt>gmt:net_delay</tt>: Input delay, in frames.<br/>You may use this in custom logic to make the game more forgiving if players have high input latency.
+			</li><li>	<tt>gmt:is_replay</tt>: Indicates that GMT is currently displaying a replay.<br/>You can use this to adjust UI accordingly (e.g. show inputs).
+			</li><li>	<tt>gmt:was_replay</tt>: Indicates that the current session is a replay, or started from a replay. This can be used to allow "spliced" scores (resuming mid-replay to correct for a mistake) while sorting them into a separate leaderboard.
+			</li><li>	<tt>gmt:is_tas</tt>: Indicates that <a href="#tas">playback features</a> are enabled.<br/>Similarly, you can use this to auto-categorize submissions.
+			</li></ul><p>
+			Example (making different views visible for host/guest):
+			</p><pre class="gmlmd">
+<span class="kw">var</span> <span class="sv">map</span> <span class="op">=</span> <span class="sf">os_get_info</span><span class="op">(</span><span class="op">)</span><span class="op">;</span>
+<span class="kw">if</span> <span class="op">(</span><span class="sf">ds_map_exists</span><span class="op">(</span><span class="sv">map</span><span class="op">,</span> <span class="st">"gmt:is_server"</span><span class="op">)</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="sv">map</span><span class="op">[</span><span class="op">?</span><span class="st">"gmt:net_index"</span><span class="op">]</span> <span class="op">==</span> <span class="nu">0</span><span class="op">)</span> <span class="cb">{</span>
+        <span class="sv">view_visible</span><span class="op">[</span><span class="nu">0</span><span class="op">]</span> <span class="op">=</span> <span class="sv">true</span><span class="op">;</span>
+        <span class="sv">view_visible</span><span class="op">[</span><span class="nu">1</span><span class="op">]</span> <span class="op">=</span> <span class="sv">false</span><span class="op">;</span>
+    <span class="cb">}</span> <span class="kw">else</span> <span class="cb">{</span>
+        <span class="sv">view_visible</span><span class="op">[</span><span class="nu">0</span><span class="op">]</span> <span class="op">=</span> <span class="sv">false</span><span class="op">;</span>
+        <span class="sv">view_visible</span><span class="op">[</span><span class="nu">1</span><span class="op">]</span> <span class="op">=</span> <span class="sv">true</span><span class="op">;</span>
+    <span class="cb">}</span>
+<span class="cb">}</span>
+</pre></div></div><div class="item"><a class="header" id="per-player-io" href="#per-player-io" title="(permalink)">Player-specific file operations</a><div class="content"><p>
+			By default, save directory operations will use the host's (authority) files.
+			</p><p>
+			However, you can also read files of a specific player using special syntax,
+			</p><pre>
+@&lt;0-based player index&gt;:/&lt;relative file path&gt;
+</pre><p>So, <tt>@0:/save.ini</tt> would read the host's <tt>save.ini</tt>,
+			while <tt>@1:/save.ini</tt> would read the guest's <tt>save.ini</tt>.
+			</p><p>
+			This can be used for combining save files of multiple players on startup and
+			saving specific unlocks achieved in an online session.
+			</p><p>
+			Example:
+			</p><pre class="gmlmd">
+<span class="co">// ... on game start</span>
+<span class="kw">var</span> <span class="sv">map</span> <span class="op">=</span> <a class="sf" href="#os_get_info">os_get_info</a><span class="op">(</span><span class="op">)</span><span class="op">;</span>
+<span class="kw">global</span><span class="op">.</span><span class="gv">gmt</span> <span class="op">=</span> <span class="sf">ds_map_exists</span><span class="op">(</span><span class="sv">map</span><span class="op">,</span> <span class="st">"gmt:is_server"</span><span class="op">)</span><span class="op">;</span>
+<span class="kw">global</span><span class="op">.</span><span class="gv">next_player_index</span> <span class="op">=</span> <span class="nu">0</span><span class="op">;</span>
+<span class="sf">instance_create_depth</span><span class="op">(</span><span class="sv">x</span><span class="op">,</span> <span class="sv">y</span><span class="op">,</span> <span class="nu">0</span><span class="op">,</span> <span class="ri">obj_player</span><span class="op">)</span><span class="op">;</span>
+
+<span class="kw">if</span> <span class="op">(</span><span class="kw">global</span><span class="op">.</span><span class="gv">gmt</span> <span class="op">&amp;&amp;</span> <span class="sv">map</span><span class="op">[</span><span class="op">?</span><span class="st">"gmt:net_count"</span><span class="op">]</span> <span class="op">&gt;</span> <span class="nu">1</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="co">// if there's a second player, spawn them in too</span>
+    <span class="kw">global</span><span class="op">.</span><span class="gv">next_player_index</span> <span class="op">=</span> <span class="nu">1</span><span class="op">;</span>
+    <span class="sf">instance_create_depth</span><span class="op">(</span><span class="sv">x</span><span class="op">,</span> <span class="sv">y</span><span class="op">,</span> <span class="nu">0</span><span class="op">,</span> <span class="ri">obj_player</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span>
+</pre><p>and then, in obj_player's Create event:
+			</p><pre class="gmlmd">
+<span class="sv">index</span> <span class="op">=</span> <span class="kw">global</span><span class="op">.</span><span class="gv">next_player_index</span><span class="op">;</span>
+<span class="kw">if</span> <span class="op">(</span><span class="kw">global</span><span class="op">.</span><span class="gv">gmt</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">ini_open</span><span class="op">(</span><span class="st">"@"</span> <span class="op">+</span> <span class="sf">string</span><span class="op">(</span><span class="sv">index</span><span class="op">)</span> <span class="op">+</span> <span class="st">":/save.ini"</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span> <span class="kw">else</span> <span class="sf">ini_open</span><span class="op">(</span><span class="st">"save.ini"</span><span class="op">)</span><span class="op">;</span>
+<span class="sv">name</span> <span class="op">=</span> <span class="sf">ini_read_string</span><span class="op">(</span><span class="st">"player"</span><span class="op">,</span> <span class="st">"name"</span><span class="op">,</span> <span class="st">""</span><span class="op">)</span><span class="op">;</span>
+<span class="co">// ... read other variables too</span>
+<span class="sf">ini_close</span><span class="op">(</span><span class="op">)</span><span class="op">;</span>
+</pre><p>This would read each player's <tt>name</tt> from their respective local <tt>save.ini</tt> file.
+		</p></div></div><div class="item"><a class="header" id="per-player-input" href="#per-player-input" title="(permalink)">Player-specific keyboard/mouse polling</a><div class="content"><p>
+			Although writing <a href="#gamepad-lua">Lua gamepad handlers</a> is an option,
+			if you are the game's developer, there is also a more convenient one.
+			</p><p>
+			If you run
+			</p><pre class="gmlmd">
+<span class="sf">debug_event</span><span class="op">(</span><span class="st">"gmt:multidevice"</span><span class="op">)</span><span class="op">;</span>
+</pre><p>while GMT is enabled, multi-device input mode will be enabled.
+			This enables a few non-standard uses of GameMaker functions:
+			</p><ul>
+			<li>	<tt>keyboard_check*(key + 256 * one_based_index)</tt>:<br/>Polls a key from specific player.<br/>So <tt>keyboard_check(vk_left)</tt> would poll Left key from any player (as before),
+				<tt>keyboard_check(vk_left + 256)</tt> would poll Left from P1 (host/authority),
+				and <tt>keyboard_check(vk_left + 512)</tt> would poll Left from P2 (guest).<br/>Similarly works for <tt>keyboard_check_pressed</tt> and <tt>keyboard_check_released</tt>.
+			</li><li>	<tt>device_mouse_*(one_based_index, ...)</tt>:
+				Polls mouse data from a specific player.<br/>So, <tt>device_mouse_x(0)</tt> would poll from any player (as before),
+				<tt>device_mouse_x(1)</tt> would poll from P1 (host/authority),
+				and <tt>device_mouse_x(2)</tt> would poll from P2 (guest).
+				Works for all <tt>device_mouse_*</tt> functions.
+			</li></ul></div></div></div></div></div></div><div class="item"><a class="header" id="Credits" href="#Credits" title="(permalink)">Credits</a><div class="content"><p>
+	Software by <a href="https://yal.cc">YellowAfterlife</a>.
+	</p><p>
+	Uses <a href="https://www.lua.org/">Lua</a> for scripting elements.
+	</p><p>
+	Uses <a href="https://github.com/microsoft/detours/">Microsoft Detours</a> for function rerouting.
+	</p><p>
+	Uses a modified version of <a href="https://stackoverflow.com/questions/23788236/get-size-of-assembly-instructions/23843450#23843450">a function</a>
+	by Semantic Designs for x86 instruction parsing.
+	</p><p>
+	Uses a function signature search trick by <a href="https://github.com/Saturnyoshi">Saturnyoshi</a>
+	for faster startup in select GM versions.
+</p></div></div><!--doc>-->
+</div></div></div>
+<script>(function() {
+var doc, headers;
+//
+var path = "GMTogether readme";
+var state = null;
+if (window.localStorage && JSON.parse) {
+	state = window.localStorage.getItem(path);
+	state = state ? JSON.parse(state) : { };
+	if (state == null) state = { };
+}
+var isLocal = (location.host.indexOf("localhost") == 0);
+//
+function h3bind(h3) {
+	var node = h3.parentNode;
+	var snip = node.children[1];
+	var id = h3.id || h3.textContent;
+	h3.snip = snip;
+	h3.doc_set = function(z) {
+		if (z) node.classList.add("open"); else node.classList.remove("open");
+		if (state) {
+			state[id] = z;
+			window.localStorage.setItem(path, JSON.stringify(state));
+		}
+	}
+	h3.doc_hide = function() {
+		this.doc_set(false);
+	}
+	h3.doc_show = function() {
+		this.doc_set(true);
+	}
+	h3.onclick = function(_) {
+		var seen = !node.classList.contains("open");
+		h3.doc_set(seen);
+		return false;
+	};
+}
+function getHashFunc(id) {
+	var node = document.getElementById(id);
+	if (node == null) return null;
+	return function(e) {
+		while (node && node != doc) {
+			if (node.classList.contains("item")) {
+				node.classList.add("open");
+			}
+			node = node.parentElement;
+		}
+	};
+}
+// Display helpers:
+window.opt_none = function() {
+	for (var li = 0; li < headers.length; li++) headers[li].doc_hide();
+};
+window.opt_list = function() {
+	for (var li = 0; li < headers.length; li++) {
+		var h3 = headers[li];
+		if (h3.parentNode.parentNode != doc) {
+			h3.doc_hide();
+		} else h3.doc_show();
+	}
+};
+window.opt_all = function() {
+	for (var li = 0; li < headers.length; li++) headers[li].doc_show();
+};
+window.live_post = function() {
+	doc = document.getElementById("doc");
+	headers = doc.getElementsByClassName("header");
+	//
+	for (var i = 0; i < headers.length; i++) h3bind(headers[i]);
+	// Clicks in document expand the related section:
+	var anchors = doc.getElementsByTagName("a");
+	for (var i = 0; i < anchors.length; i++) {
+		var anchor = anchors[i];
+		if (anchor.classList.contains("header")) continue;
+		var href = anchor.getAttribute("href");
+		if (href[0] == "#") {
+			var fn = getHashFunc(href.substr(1));
+			if (!fn) {
+				anchor.classList.add("broken");
+				anchor.title = "(section missing)";
+			} else anchor.addEventListener("click", fn);
+		}
+	}
+	//
+	for (var li = 0; li < headers.length; li++) {
+		var h3 = headers[li];
+		var val = state ? state[h3.id || h3.textContent] : null;
+		if (val == null) val = isLocal || h3.parentNode.parentNode == doc;
+		if (val) h3.doc_show(); else h3.doc_hide();
+	}
+};
+window.live_post();
+//
+(function() {
+	var hash = document.location.hash;
+	if (hash) {
+		var _hash = hash.substr(1);
+		getHashFunc(_hash)();
+		setTimeout(function() {
+			document.location.hash = hash + " ";
+			setTimeout(function() {
+				document.location.hash = hash;
+			}, 100);
+		}, 100);
+	}
+})();
+//
+doc.setAttribute("ready", "");
+})();
+</script>
+</body></html>
